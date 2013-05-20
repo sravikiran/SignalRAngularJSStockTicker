@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ASP.NET SignalR Stock Ticker</title>
+    <link href="../SignalR.Sample/StockTicker.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-ng-app="app" data-ng-controller="StockTickerCtrl">
+        <h1>
+            ASP.NET SignalR Stock Ticker Sample</h1>
+        <input type="button" id="open" value="Open Market" data-disable="{{marketIsOpen}}"
+            data-ng-click="openMarket()" />
+        <input type="button" id="close" value="Close Market" data-disable="{{!marketIsOpen}}"
+            data-ng-click="closeMarket()" />
+        <input type="button" id="reset" value="Reset" data-disable="{{marketIsOpen}}" data-ng-click="reset()" />
+        <h2>
+            Live Stock Table</h2>
+        <div id="stockTable">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>
+                            Symbol
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Open
+                        </th>
+                        <th>
+                            High
+                        </th>
+                        <th>
+                            Low
+                        </th>
+                        <th>
+                            Change
+                        </th>
+                        <th>
+                            %
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="loading" data-ng-show="stocks.length==0">
+                        <td colspan="7">
+                            loading...
+                        </td>
+                    </tr>
+                    <tr data-ng-repeat="stock in stocks" data-flash="marketIsOpen">
+                        <td>
+                            {{stock.Symbol}}
+                        </td>
+                        <td>
+                            {{stock.Price | number:2}}
+                        </td>
+                        <td>
+                            {{stock.DayOpen | number:2}}
+                        </td>
+                        <td>
+                            {{stock.DayHigh | number:2}}
+                        </td>
+                        <td>
+                            {{stock.DayLow | number:2}}
+                        </td>
+                        <td>
+                            {{stock.Change | change}}
+                        </td>
+                        <td>
+                            {{stock.PercentChange | percentage}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>
+            Live Stock Ticker</h2>
+        <div id="stockTicker">
+            <div class="inner">
+                <ul data-scroll-ticker="marketIsOpen">
+                    <li class="loading" data-ng-show="stocks.length==0">loading...</li>
+                    <li data-ng-repeat="stock in stocks" data-symbol="{{stock.Symbol}}" data-flash="marketIsOpen"><span class="symbol">
+                        {{stock.Symbol}}</span> <span class="price">{{stock.Price | number:2}}</span><span
+                            class="change">{{stock.Change | change}} ({{stock.PercentChange | percentage}})</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../bundles/jquery"></script>
+    <script src="../bundles/jquerycolor"></script>
+    <script type="text/javascript" src="jQueryColor-FlashEffect.js"></script>
+    <script src="../Scripts/jquery.signalR-1.1.1.min.js"></script>
+    <script type="text/javascript" src="../Scripts/angular.js"></script>
+    <script type="text/javascript" src="factory.js"></script>
+    <script type="text/javascript" src="directives.js"></script>
+    <script type="text/javascript" src="filters.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+        
+</body>
+</html>
