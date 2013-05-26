@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR-StockTicker-AngularJS", "SignalR-StockTicker-AngularJS.csproj", "{E8EA606A-F93E-497C-824D-A913F82E34C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRAngularJSStockTicker", "SignalRAngularJSStockTicker.csproj", "{E8EA606A-F93E-497C-824D-A913F82E34C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
