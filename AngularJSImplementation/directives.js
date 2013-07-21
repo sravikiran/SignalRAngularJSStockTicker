@@ -1,19 +1,3 @@
-﻿//app.directive('disable', function ($) {
-//    return function (scope, elem, attrs) {
-//        function updateDisabled() {
-//            if (scope[attrs.disable] == true) {
-//                $(elem).attr('disabled', 'disabled');
-//            }
-//            else {
-//                $(elem).removeAttr('disabled');
-//            }
-//        }
-//        scope.$watch(attrs.disable, function (value) {
-//            updateDisabled();
-//        });
-//    }
-//});
-
 app.directive('disable', function ($interpolate) {
     return function (scope, elem, attrs) {
         var exp = $interpolate(elem.attr('data-disable'));
