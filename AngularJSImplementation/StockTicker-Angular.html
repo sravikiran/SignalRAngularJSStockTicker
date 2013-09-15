@@ -80,8 +80,8 @@
             <div class="inner">
                 <ul data-scroll-ticker="marketIsOpen">
                     <li class="loading" data-ng-show="stocks.length==0">loading...</li>
-                    <li data-ng-repeat="stock in stocks" data-symbol="{{stock.Symbol}}" data-flash="marketIsOpen"><span class="symbol">
-                        {{stock.Symbol}}</span> <span class="price">{{stock.Price | number:2}}</span><span
+                    <li data-ng-repeat="stock in stocks" data-symbol="{{stock.Symbol}}" data-flash="marketIsOpen">
+                        <span class="symbol">{{stock.Symbol}}</span> <span class="price">{{stock.Price | number:2}}</span><span
                             class="change">{{stock.Change | change}} ({{stock.PercentChange | percentage}})</span>
                     </li>
                 </ul>
@@ -93,10 +93,13 @@
     <script type="text/javascript" src="jQueryColor-FlashEffect.js"></script>
     <script src="../Scripts/jquery.signalR-1.1.1.min.js"></script>
     <script type="text/javascript" src="../Scripts/angular.js"></script>
+
+    <!-- Use either (factory.js and controller.01.js) or (service.js and controller.02.js) -->
     <script type="text/javascript" src="factory.js"></script>
+    <script type="text/javascript" src="controller.01.js"></script>
+    <!--<script type="text/javascript" src="service.js"></script>
+    <script type="text/javascript" src="controller.02.js"></script>-->
     <script type="text/javascript" src="directives.js"></script>
     <script type="text/javascript" src="filters.js"></script>
-    <script type="text/javascript" src="controller.js"></script>
-        
 </body>
 </html>

@@ -85,7 +85,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AngularJSImplementation\controller.js" />
+    <Content Include="AngularJSImplementation\controller.01.js" />
+    <Content Include="AngularJSImplementation\controller.02.js" />
+    <Content Include="AngularJSImplementation\service.js" />
     <Content Include="AngularJSImplementation\directives.js" />
     <Content Include="AngularJSImplementation\factory.js" />
     <Content Include="AngularJSImplementation\filters.js" />
